@@ -182,17 +182,18 @@ local categoryMenus = {}
 -- iterate through recipes and organize them by category
 for _, v in ipairs(Config.Recipes) do
     local ingredientsMetadata = {}
-
+    local setheader = RSGCore.Shared.Items[tostring(v.receive)].label
+    local itemimg = "nui://"..Config.img..RSGCore.Shared.Items[tostring(v.receive)].image
     for i, ingredient in ipairs(v.ingredients) do
         table.insert(ingredientsMetadata, { label = RSGCore.Shared.Items[ingredient.item].label, value = ingredient.amount })
     end
     local option = {
-        title = v.title,
-        icon = 'fa-solid fa-kitchen-set',
+        title = setheader,
+        icon = itemimg,
         event = 'rsg-cooking:client:checkingredients',
         metadata = ingredientsMetadata,
         args = {
-            title = v.title,
+            title = setheader,
             ingredients = v.ingredients,
             cooktime = v.cooktime,
             receive = v.receive,
