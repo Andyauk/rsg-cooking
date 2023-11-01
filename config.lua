@@ -149,7 +149,7 @@ Config.Recipes = {
 
     -- Baits ------ rsg-hunting support
     -- {
-    --     category = "Carnadas",
+    --     category = "Baits",
     --     cooktime = 5000,
     --     ingredients = { 
     --         [1] = { item = "corn", amount = 1 },
@@ -159,7 +159,7 @@ Config.Recipes = {
     --     giveamount = 1
     -- },
     -- {
-    --     category = "Carnadas",
+    --     category = "Baits",
     --     cooktime = 5000,
     --     ingredients = { 
     --         [1] = { item = "corn", amount = 1 },
@@ -173,7 +173,7 @@ Config.Recipes = {
     --     giveamount = 1
     -- },
     -- {
-    --     category = "Carnadas",
+    --     category = "Baits",
     --     cooktime = 5000,
     --     ingredients = { 
     --         [1] = { item = "provision_meat_game", amount = 1 },
@@ -184,7 +184,7 @@ Config.Recipes = {
     --     giveamount = 1
     -- },
     -- {
-    --     category = "Carnadas",
+    --     category = "Baits",
     --     cooktime = 5000,
     --     ingredients = { 
     --         [1] = { item = "big_game_meat",                     amount = 1 },
