@@ -19,11 +19,11 @@ exports['rsg-target']:AddTargetModel(Config.CampfireProps, {
         {
             event = "rsg-campfire:getWarm",
             icon = "fas fa-fire",
-            label = "Warm Up",
+            label = Lang:t('label.warn_up_menu'),
         },
         {
             icon = "fas fa-fire-extinguisher",
-            label = "Extinguish",
+            label = Lang:t('label.extinguish_menu'),
             action = function(entity)
                 TriggerEvent('rsg-campfire:removeCampfire', entity)
             end
@@ -43,7 +43,8 @@ RegisterNetEvent('rsg-campfire:getWarm', function()
     if lib.progressCircle({
         duration = 27000, -- Adjust the duration as needed
         position = 'bottom',
-        label = 'Warming Up.... ',
+        --label = Lang:t('label.warming_up_menu') .. " ",
+        label = Lang:t('label.warming_up_menu'),
         useWhileDead = false,
         canCancel = false, -- Change to true if you want to allow canceling
         anim = {
@@ -149,7 +150,7 @@ RegisterNetEvent('rsg-campfire:removeCampfire', function(Campfire)
     -- Use the Oxlib progress circle
     if lib.progressCircle({
         duration = 3000, -- Adjust the duration as needed
-        label = 'Removing Campfire',
+        label = Lang:t('label.removing_campfire_menu'),
         position = 'bottom',
         useWhileDead = false,
         canCancel = false, -- Change to true if you want to allow canceling
@@ -168,10 +169,10 @@ RegisterNetEvent('rsg-campfire:removeCampfire', function(Campfire)
         -- Add coal to the player's inventory using RSGCore's AddItem function
         TriggerServerEvent('rsg-campfire:giveCoal')
 
-        RSGCore.Functions.Notify("Campfire removed.", 'primary')
+        RSGCore.Functions.Notify(Lang:t('label.removing_campfire_notif'), 'primary')
     else
         -- Handle cancelation
-        RSGCore.Functions.Notify("Campfire removal canceled.", 'error')
+        RSGCore.Functions.Notify(Lang:t('label.cremoving_campfire_notif'), 'error')
     end
 end)
 ------------------------------------------------------------------------------------------------------
@@ -205,7 +206,7 @@ for _, v in ipairs(Config.Recipes) do
     if not categoryMenus[v.category] then
         categoryMenus[v.category] = {
             id = 'cooking_menu_' .. v.category,
-            title = 'Cooking Menu - ' .. v.category,
+            title = Lang:t('label.cook_menu') .. v.category,
             menu = 'cooking_main_menu',
             onBack = function() end,
             options = { option }
@@ -230,7 +231,7 @@ AddEventHandler('rsg-cooking:client:cookmenu', function()
     -- show main menu with categories
     local mainMenu = {
         id = 'cooking_main_menu',
-        title = 'Cooking Main Menu',
+        title = Lang:t('label.cook_main_menu'),
         options = {}
     }
 
@@ -252,10 +253,10 @@ end)
 
 -- check player has the ingredients to cook item
 RegisterNetEvent('rsg-cooking:client:checkingredients', function(data)
-    local input = lib.inputDialog('Cooking Amount', {
+    local input = lib.inputDialog(Lang:t('label.cooking_amount'), {
         { 
             type = 'input',
-            label = 'Amount',
+            label = Lang:t('label.amount'),
             required = true,
             min = 1, max = 10 
         },

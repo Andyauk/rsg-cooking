@@ -91,7 +91,7 @@ AddEventHandler('rsg-campfire:giveCoal', function()
         local coalItem = "coal"  -- Replace with the actual item name for coal in your inventory system
         local amountToAdd = 3     -- Number of coal pieces to add
         Player.Functions.AddItem(coalItem, amountToAdd)
-        TriggerClientEvent('RSGCore:Notify', src, 'You received 3 pieces of coal.', 'success')
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('label.got_coal_notif'), 'success')
     end
 end)
 
