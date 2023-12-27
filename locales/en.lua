@@ -30,7 +30,18 @@ local Translations = {
       cooking_a = 'Cooking',
     },
     label = {
-      open_cooking_menu = 'Open Cooking Menu'
+      open_cooking_menu = 'Open Cooking Menu',
+      warn_up_menu = 'Warn Up',
+      extinguish_menu = 'Extinguish',
+      warming_up_menu = 'Warming Up...',
+      removing_campfire_menu = 'Removing Campfire',
+      removing_campfire_notif = 'Campfire removed.',
+      cremoving_campfire_notif = 'Campfire removal canceled.',
+      got_coal_notif = 'You received 3 pieces of coal.',
+      cook_main_menu = 'Cooking Main Menu',
+      cook_menu = 'Cooking Menu - ',
+      cooking_amount = 'Cooking Amount',
+      amount = 'Amount'
     }
 }
 
