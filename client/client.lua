@@ -307,7 +307,7 @@ RegisterNetEvent('rsg-cooking:cookmeal', function(title, ingredients, cooktime, 
                 flag = 15,
             },
             disableControl = true, -- Disable player control during the animation
-            label = 'Cooking ' .. title, -- Your cooking message here
+            label = Lang:t('progressbar.cooking_a') .. title, -- Your cooking message here
         }) then
             -- Cooking was successful
             TriggerServerEvent('rsg-cooking:server:finishcooking', ingredients, receive, giveamount, cookamount)
